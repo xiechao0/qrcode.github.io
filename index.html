@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		
-		<a href="ruijieuws://a.app.qq.com/o/simple.jsp?pkgname=com.edufound.mobile" id="openApp">打开uws</a>
+		<a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.edufound.mobile" id="openApp">打开uws</a>
 		<script type="text/javascript">
 				var ua = navigator.userAgent.toLocaleLowerCase();
 				var config = {
@@ -20,12 +20,11 @@
 			    // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
 	            // 否则打开a标签的href链接  
 	            var ifr = document.createElement('iframe');  
-	            ifr.src = ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;  
+	            ifr.src = config.scheme_Adr;//ua.indexOf('os') > 0 ? config.scheme_IOS : config.scheme_Adr;  
 	            ifr.style.display = 'none';  
 	            document.body.appendChild(ifr);  
 	            window.setTimeout(function(){
-// 			     window.location = config.download_url
-					console.log('remove xc')
+			console.log('remove xc')
 	                document.body.removeChild(ifr);  
 	            },config.timeout);
 	        
